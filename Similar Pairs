@@ -1,0 +1,63 @@
+Link - https://codeforces.com/contest/1360/problem/C
+
+#include <iostream>
+#include<bits/stdc++.h>
+#include<cmath>
+#include<vector>
+
+using namespace std;
+
+
+int main()
+{
+     vector<long> v;
+     long t,n,x,odd=0,even=0,k=0;
+     cin>>t;
+     while (t){
+     cin>>n;
+     while(n){
+          cin>>x;
+          v.push_back(x);
+          n--;
+
+     }
+     sort(v.begin(),v.end());
+
+     vector<long>::iterator i;
+
+     for( i = v.begin(); i < v.end(); i++) {
+               //cout<<*i<<' ';
+          if(*i %2 == 1)
+               odd++;
+          else
+               even++;
+              // cout<< *i<<' ';
+     }
+    
+     
+
+     if(odd %2== 0 && even%2==0)
+          cout<<"YES"<<endl;
+     else{
+     for( i = v.begin()+1; i < v.end(); i++){
+          if(*i - *(i-1)== 1 ){
+               k++;
+               i=v.end();
+          }
+
+     }
+    
+     if(k==1)
+          cout<<"YES"<<endl;
+     else
+          cout<<"NO"<<endl;
+
+     }
+     k=0;
+     odd=0;
+     even=0;
+     v.clear();
+     t--;
+     }
+    return 0;
+}
