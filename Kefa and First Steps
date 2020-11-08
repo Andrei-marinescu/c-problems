@@ -1,0 +1,35 @@
+Link - https://codeforces.com/contest/580/problem/A
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+     int n;
+     long x;
+     vector<long> v;
+     cin>>n;
+     while(n){
+          cin>>x;
+          v.push_back(x);
+          n--;
+     }
+     int k=1,maxim=0;
+     vector<long>::iterator i;
+     for(i=v.begin()+1;i!=v.end();i++){
+          if(*i >= *(i-1))
+               k++;
+          else{
+               if(k>maxim)
+                    maxim=k;
+               k=1;
+          }
+     }
+     if(k>maxim)
+     maxim=k;
+     cout<<maxim;
+
+    return 0;
+}
