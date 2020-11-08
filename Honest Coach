@@ -1,0 +1,43 @@
+Link - https://codeforces.com/contest/1360/problem/B
+
+#include <iostream>
+#include<bits/stdc++.h>
+#include<cmath>
+
+using namespace std;
+
+
+int main()
+{
+     vector<int> v;
+     int t,n,x,dif=1001,ok=1;
+     cin>>t;
+     while (t){
+     cin>>n;
+     while(n){
+          cin>>x;
+          v.push_back(x);
+          n--;
+
+     }
+     sort(v.begin(),v.end());
+     for(int i=1;i<v.size();i++){
+          if(v[i]==v[i-1]){
+               cout<<0<<endl;
+               ok=0;
+               i=v.size();
+               //break;
+          }
+          else
+               if(abs(v[i-1]-v[i])<dif)
+               dif=abs(v[i-1]-v[i]);
+     }
+     if(ok)
+          cout<<dif<<endl;
+     ok=1;
+     dif=1001;
+     v.clear();
+     t--;
+     }
+    return 0;
+}
