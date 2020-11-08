@@ -18,15 +18,25 @@ int main()
           n--;
      }
      sort(v.begin(),v.end());
+ 
      vector<int>::iterator upper1,upper2,upper3,upper4;
+     
      upper1=upper_bound(v.begin(),v.end(),1);
+     
      int up1 = (upper1-v.begin());
+     
      upper2 = upper_bound(upper1,v.end(),2);
+     
      int up2 = (upper2-upper1);
+     
      upper3 = upper_bound(upper2,v.end(),3);
+     
      int up3 =(upper3-upper2);
+     
      upper4 = upper_bound(upper3,v.end(),4);
+     
      int up4 =(upper4-upper3);
+     
      
      int remaining1=0,remaining2=0,taxi=0;
      if(up3>up1)
