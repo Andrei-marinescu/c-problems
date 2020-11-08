@@ -1,0 +1,33 @@
+Link - https://codeforces.com/contest/122/problem/B
+
+#include <bits/stdc++.h>
+#include<vector>
+
+using namespace std;
+
+
+
+
+int main()
+{
+    char v[50];
+    cin>>v;
+    short int numbersoffour=0,numbersofseven=0;
+    for(int i=0;i<strlen(v);i++){
+     if(v[i]=='7')
+      numbersofseven++;
+     if(v[i]=='4')
+     numbersoffour++;}
+     if(numbersoffour || numbersofseven){
+          if ( numbersoffour ==numbersofseven)
+               cout<<'4';
+          else if (numbersoffour < numbersofseven)
+               cout<<'7';
+          else
+               cout<<'4';
+     }
+     else
+          cout<<"-1";
+
+    return 0;
+}
